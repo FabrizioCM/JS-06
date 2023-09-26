@@ -81,14 +81,16 @@ users.forEach(user => {
 // Al menos deben tener 2 commits
 
 document.getElementById('ProfileBtn').addEventListener('click', function () {
-    const nombreUsuario = document.getElementById('name, aging, Outlook').value;
-    
-    if (nombreUsuario) {
+    const nombreUsuario = document.getElementById('name').value;
+    const edadUsuario = document.getElementById('aging').value;
+    const descripcionUsuario = document.getElementById('description').value;
+
+    if (this.addEventListener('click')) {
         const nuevoID = {
             id: users.length + 1,
             user_name: nombreUsuario,
-            description: '',
-            age: '',
+            description: descripcionUsuario,
+            age: edadUsuario,
         };
         users.push(nuevoID);
     }
