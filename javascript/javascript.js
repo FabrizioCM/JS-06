@@ -98,25 +98,31 @@ document.getElementById('ProfileBtn').addEventListener('click', function () {
 */
 //Creamos la nueva tarjeta para usar dentro de este sin usar bandas
 const nuevaTarjeta = (user, userElements) => {
+    //convertimos a texto
     userElements.user_name.textContent = user.user_name;
     userElements.age.textContent = user.age;
     userElements.description.textContent = user.description;
-//
+//devolvemos el valor userElements
     return userElements;
 
 }
+//asignamos que obtendran el valor de las constantes
     const nombreUsuario = document.getElementById('name')
     const edadUsuario = document.getElementById('aging')
     const descripcionUsuario = document.getElementById('description')
+    //colocamos un evento con click en el boton
     ProfileBtn.addEventListener('click', () => {
     const nuevoID = {
       //  id: users.length + 1, NO MOVERLE
+      //el nuevo array
         user_name: nombreUsuario.value,
         age: edadUsuario.value,
         description: descripcionUsuario.value,
     }
-
+//empujamos nuevo ID al array users
     users.push(nuevoID);
+
+    //Creamos la tarjeta
     const card = createCard();
     const userElements = createDescription(); 
     const elementsWithData = nuevaTarjeta(nuevoID, userElements); 
