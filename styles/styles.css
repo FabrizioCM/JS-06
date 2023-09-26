@@ -1,0 +1,30 @@
+body{
+    background-color: black;
+    color: white;
+    font-family: 'Courier New';
+    font-size: medium;
+    font-style: italic;
+    align-items: center;
+}
+.pageTitle{
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    margin: 10px;
+    border-radius: 25px;
+    background: linear-gradient(#e66465, #9198e5);
+}
+button{
+    margin: 10px;
+    background-color: #2190a3;
+    border-bottom: #e66465;
+    color: #000000;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
