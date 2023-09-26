@@ -67,7 +67,7 @@ const renderElements = (card, elements) => {
 users.forEach(user => {
     const card = createCard(); //llamo a su funcion y creamos la tarjeta para los elementos
     const userElements = createDescription(); // igualmente creamos la description llamando a la funcion
-    const elementsWithData = populateElements(user, userElements); // completa los elementos HTML con datos del usuario
+    const elementsWithData = populateElements(user, userElements,); // completa los elementos HTML con datos del usuario
     renderElements(card, elementsWithData); // plasma los elementos de la tarjeta
     CARD_SECTION.append(card); // llamo de nuevo a la funcion y agrego la card
 })
@@ -79,13 +79,13 @@ users.forEach(user => {
 // EVITAR LAS BANDAS PARA EL EJERCICIO 2
 // 2. Obtener la info del usuario desde inputs y mostrar en tarjetas
 // Al menos deben tener 2 commits
-
+/**
 document.getElementById('ProfileBtn').addEventListener('click', function () {
     const nombreUsuario = document.getElementById('name').value;
     const edadUsuario = document.getElementById('aging').value;
     const descripcionUsuario = document.getElementById('description').value;
 
-    if (this.addEventListener('click')) {
+    if (addEventListener('click')) {
         const nuevoID = {
             id: users.length + 1,
             user_name: nombreUsuario,
@@ -95,5 +95,31 @@ document.getElementById('ProfileBtn').addEventListener('click', function () {
         users.push(nuevoID);
     }
 });
+*/
+//Creamos la nueva tarjeta para usar dentro de este sin usar bandas
+const nuevaTarjeta = (user, userElements) => {
+    userElements.user_name.textContent = user.user_name;
+    userElements.age.textContent = user.age;
+    userElements.description.textContent = user.description;
+//
+    return userElements;
 
+}
+    const nombreUsuario = document.getElementById('name')
+    const edadUsuario = document.getElementById('aging')
+    const descripcionUsuario = document.getElementById('description')
+    ProfileBtn.addEventListener('click', () => {
+    const nuevoID = {
+      //  id: users.length + 1, NO MOVERLE
+        user_name: nombreUsuario.value,
+        age: edadUsuario.value,
+        description: descripcionUsuario.value,
+    }
 
+    users.push(nuevoID);
+    const card = createCard();
+    const userElements = createDescription(); 
+    const elementsWithData = nuevaTarjeta(nuevoID, userElements); 
+    renderElements(card, elementsWithData); 
+    CARD_SECTION.append(card);
+})
