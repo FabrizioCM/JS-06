@@ -25,6 +25,7 @@ const users = [
     }
 ]
 
+
 const CARD_SECTION = document.getElementById('profiles');
 
 const createCard = () => {
@@ -79,20 +80,18 @@ users.forEach(user => {
 // 2. Obtener la info del usuario desde inputs y mostrar en tarjetas
 // Al menos deben tener 2 commits
 
-///////////////////////////////////////////////
-const inputName = document.getElementById('name');
-const inputAge = document.getElementById('age');
-const inputMail = document.getElementById('mail');
-const profileBtn = document.getElementById('ProfileBtn');
-
-
-
-
-profileBtn.addEventListener('click', () => {
-    username.textContent = inputName.value
-    aging.textContent = inputAge.value
-    Outlook.textContent = inputMail.value
-
-})
+document.getElementById('ProfileBtn').addEventListener('click', function () {
+    const nombreUsuario = document.getElementById('name, aging, Outlook').value;
+    
+    if (nombreUsuario) {
+        const nuevoID = {
+            id: users.length + 1,
+            user_name: nombreUsuario,
+            description: '',
+            age: '',
+        };
+        users.push(nuevoID);
+    }
+});
 
 
